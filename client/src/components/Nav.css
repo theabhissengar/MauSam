@@ -1,0 +1,84 @@
+/* Main navbar container */
+.navbar {
+  height: 70px;
+  padding: 0 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* Left side: logo + title */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.nav-title {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(0, 0, 0, 0.12);
+  transform: scale(1.07);
+}
+
+/* Animation */
+.theme-icon {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.theme-toggle.animating .theme-icon {
+  transform: rotate(180deg);
+  opacity: 0.5;
+}
+
+/* Dark mode styles */
+.dark .navbar {
+  background: rgba(20, 20, 20, 0.8);
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dark .theme-toggle {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dark .theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
